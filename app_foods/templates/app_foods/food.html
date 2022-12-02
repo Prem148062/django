@@ -1,0 +1,20 @@
+{% extends 'app_general/components/base.html' %}
+<!-- title -->
+{% block site_title %}Food - {{food.id}}{% endblock %}
+<!-- content -->
+{% block content %} {% if food is not None %}
+<div style="padding: 10px 50px">
+  <h3>{{food.title}}</h3>
+  <h5>{{food.price}} ฿</h5>
+  {% if food.is_premium%}
+  <h4 style="color: tomato">*** PREMIUM MENU ***</h4>
+  {% endif %}
+  <p style="display: block; width: 350px">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero quia totam at
+    voluptatem possimus, magnam debitis numquam tenetur optio? Dolor quis
+    necessitatibus sit nesciunt nisi.
+  </p>
+</div>
+{% else %}
+<h3>Food not found</h3>
+{% endif %} {% endblock %}
