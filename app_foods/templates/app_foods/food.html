@@ -3,11 +3,14 @@
 {% block site_title %}Food - {{food.id}}{% endblock %}
 <!-- content -->
 {% block content %} {% if food is not None %}
-<div style="padding: 10px 50px">
+<div>
   <h3>{{food.title}}</h3>
-  <h5>{{food.price}} ฿</h5>
+  <h5>{{food.price|floatformat:"g"}} ฿</h5>
   {% if food.is_premium%}
   <h4 style="color: tomato">*** PREMIUM MENU ***</h4>
+  <p style="color: teal; font-weight: 500">
+    Promotion end at: {{food.promotion_end_at|date:'j N Y'}}
+  </p>
   {% endif %}
   <p style="display: block; width: 350px">
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero quia totam at

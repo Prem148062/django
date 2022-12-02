@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
+from datetime import datetime
 from . import views
 # Create your views here.
 all_dummy_foods = [
@@ -8,18 +9,21 @@ all_dummy_foods = [
     'title':'Dark Choco Premium',
     'price':499,
     'is_premium':True,
+    'promotion_end_at':datetime(2022,12,31),
   },
   {
     'id':2,
     'title':'Red Spicy',
     'price':349,
     'is_premium':False,
+    'promotion_end_at':datetime(2022,12,31),
   },
   {
     'id':3,
     'title':'Blue Glacier',
     'price':349,
     'is_premium':False,
+    'promotion_end_at':datetime(2022,12,31),
   },
 ]
 def foods(request):
